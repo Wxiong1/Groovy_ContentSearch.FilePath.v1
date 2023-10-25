@@ -1,19 +1,16 @@
 /*<directory>: The path to the directory containing files.
 <original_text>: The original text or pattern to use for searching in the files from the given directory or subdirectories.
 <new_text>: A new text string which will replace the original text or pattern if found in the copy file as many times as it was found in the directory, then close the file.
-<output_file>: A path to a file for outputting a list of files that were modified.
-<log_file>: A log that will log the search start time, errors, search end time, pattern or text found and where.
 
 For example, if Search.groovy file is located in C:\Users\JaneDoe\Documents\GroovyScripts,
 and you want to search for all files containing the word “hello” in C:\Users\JaneDoe\Documents\Files,
 replace <directory> with C:\Users\JaneDoe\Documents\Files,
 <original_text> with hello,
 <new_text> with world,
-<output_file> with C:\Users\JaneDoe\Documents\ModifiedFiles.txt, and
-<log_file> with C:\Users\JaneDoe\Documents\Log.txt
+
 
 Invoking from the command line should look like this:
-groovy C:\Users\JaneDoe\Documents\GroovyScripts\Search.groovy C:\Users\JaneDoe\Documents\Files hello world C:\Users\JaneDoe\Documents\ModifiedFiles.txt C:\Users\JaneDoe\Documents\Log.txt
+groovy C:\Users\JaneDoe\Documents\GroovyScripts\Search.groovy C:\Users\JaneDoe\Documents\Files hello world 
 
 This will run the script and output a list of modified files to C:\Users\JaneDoe\Documents\ModifiedFiles.txt.
 The log file will be saved to C:\Users\JaneDoe\Documents\Log.txt.
@@ -27,7 +24,7 @@ import java.util.logging.Logger
 
 class Search {
     static void main(String[] args) {
-     //checks to make sure that the required arguments (directory, originalText, newText, outputFile,) are provided.
+     //checks to make sure that the required arguments (directory, originalText, newText) are provided.
         // Check if the required arguments (directory, original_text, and new_text) are provided.
         if (args.length != 3) {
             println "Usage: groovy Search.groovy <directory> <original_text> <new_text>"
