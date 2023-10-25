@@ -1,5 +1,7 @@
 # Groovy_ContentSearch.FilePath.v1
-Search directory path for file and please original text with new text. The program will create a back up copy and create a new log each time a new search/groovy is invoked.
+Search directory path for file and replace the original text with new text if it's found. 
+This program will create a back up copy and create a new log each time a new search/groovy is invoked.
+
 <directory>: The path to the directory containing files.
 <original_text>: The original text or pattern to use for searching in the files from the given directory or subdirectories.
 <new_text>: A new text string which will replace the original text or pattern if found in the copy file as many times as it was found in the directory, then close the file.
